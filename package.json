@@ -1,0 +1,28 @@
+{
+  "name": "cars-showroom-tests",
+  "version": "1.0.0",
+  "description": "Playwright test automation framework",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint tests --ext .ts",
+    "lint:fix": "eslint tests --ext .ts --fix",
+    "ci": "npm run type-check && npm run lint && npm test",
+    "dev": "http-server ./ -p 3000"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@playwright/test": "latest",
+    "@types/node": "^20.0.0",
+    "eslint": "^9.0.0",
+    "http-server": "^14.1.1",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^7.0.0"
+  }
+}
