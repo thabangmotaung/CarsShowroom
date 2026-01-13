@@ -2,6 +2,7 @@ node_modules/
 dist/
 .env
 .env.local
+.env.*.local
 .DS_Store
 *.log
 playwright-report/
@@ -9,3 +10,6 @@ test-results/
 .playwright/
 coverage/
 .nyc_output/
+reports/
+*.swp
+*.swo

@@ -97,14 +97,14 @@ test.describe('Cars API Schema Tests', () => {
     const data = await response.json();
 
     // Validate top-level structure
-    expect(data).toHaveProperty('data');
-    expect(Array.isArray(data.data)).toBeTruthy();
+    expect(data).toHaveProperty('cars');
+    expect(Array.isArray(data.cars)).toBeTruthy();
 
     // All cars should have same structure
-    const firstCar = data.data[0];
+    const firstCar = data.cars[0];
     const firstCarKeys = Object.keys(firstCar).sort();
 
-    for (const car of data.data) {
+    for (const car of data.cars) {
       const carKeys = Object.keys(car).sort();
       expect(carKeys).toEqual(firstCarKeys);
     }

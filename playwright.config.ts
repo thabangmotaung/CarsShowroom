@@ -1,4 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 
 process.env.PW_CODEGEN_NO_INSPECTOR = '1';
@@ -13,10 +16,11 @@ export default defineConfig({
   reporter: 'html',
   webServer: undefined,
   use: {
-    baseURL: 'https://practice.expandtesting.com/cars',
+    baseURL: process.env.API_BASE_URL || 'https://practice.expandtesting.com/api/cars',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
+    timeout: parseInt(process.env.API_TIMEOUT || '30000'),
   projects: [
     {
       name: 'chromium',
